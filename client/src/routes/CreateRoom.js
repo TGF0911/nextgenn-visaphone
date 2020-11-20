@@ -12,16 +12,21 @@ const CreateRoom = () => {
 
     return (
        <div id="create-room-container">
-           <form onSubmit={create}>
+           <aside>
+               {/* imagem */}
+           </aside>
+           <main>
+           <form onSubmit={create} className="create-form">
                <fieldset>
                    <legend>Criar Sala</legend>
                    <div className="input-block">
                        <label htmlFor="name">Nome da sala:</label>
                        <input type="text" id="name" value={roomName} onChange={e => setRoomName(e.target.value)}/>
                    </div>
-                   <button type="submit">Criar Sala</button>
+                   <button type="submit" className="confirm-btn">Criar Sala</button>
                </fieldset>
            </form>
+           </main>
        </div>
     );
 };
