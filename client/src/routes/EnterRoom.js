@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import '../styles/enter.css'
-import imgVideo from '../assets/create-user.jpeg'
+import imgVideo from '../assets/video-call.png'
 
 const Home = () => {
   const history = useHistory()

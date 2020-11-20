@@ -117,7 +117,7 @@ const Room = (props) => {
 
     return (
         <div id="container-room">
-            <h2>BEm vindo(a) ao {roomName}</h2>
+            <h2>Bem vindo(a) ao {roomName}</h2>
 
             <div id="container" >
                 <video className="styleVideo" id="userVideo" muted ref={userVideo} autoPlay playsInline />
