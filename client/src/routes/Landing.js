@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoMdLogIn } from 'react-icons/io'
 
-// import jetsons from '../assets/nave.png'
+import jetsons from '../assets/nave.png'
 
 import '../styles/landing.css'
 
@@ -22,13 +22,15 @@ const Landing = () => {
           <IoMdLogIn size={34} color="#fff" />
         </Link>
 
-        <Link to="/create/user/" className="create">
+        <Link to="/create-user/" className="create">
           <p>Ainda não está Cadastrado?</p>
         </Link>
-
+        <Link to="/enter-room/" className="create">
+          <p>Já tem sala criada?</p>
+        </Link>
     </div>
 
-        {/* <img src={jetsons} alt="Os Jetsons"  className="jetsons"/> */}
+        <img src={jetsons} alt="Os Jetsons"  className="jetsons"/>
       </div>
     </div>
   )

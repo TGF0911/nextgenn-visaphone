@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 
 import '../styles/create-user.css'
 
-// import videoChat from '../assets/videoChat.svg'
+import videoChat from '../assets/videoChat.svg'
 
 const CreateUser = () => {
 
@@ -40,7 +40,7 @@ const CreateUser = () => {
     <div id="create-container">
       <aside>
        <h2>Venha fazer parte de nossa comunidade.</h2>
-       {/* <img src={videoChat} alt="videoChat" className="video-chat"/> */}
+       <img src={videoChat} alt="videoChat" className="video-chat"/>
        <p>Aqui você vai poder fazer video chamadas.</p>
        <p>Pode ser reuniões de tabalho, ou até uma chamada com seus amigos!</p>
       </aside>
