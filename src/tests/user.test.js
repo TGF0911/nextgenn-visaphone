@@ -7,26 +7,27 @@ describe('User Routes', () => {
   // it('Should create new user', async () =>{
 
   //   const user = {
-  //     name: 'Bruno Teixeira',
-  //     email: 'bruno@teixeira.com',
-  //     password: 'brunotei'
+  //     name: 'Jorge Jetson',
+  //     email: 'jorge@jetson.com',
+  //     password: 'jorginho'
   //   }
 
   //   const {data} = await api.post('/users', user)
 
-  //   expect(data).to.be.an('object').to.have.property('email').to.equal('bruno@teixeira.com');
+  //   expect(data).to.be.an('object').to.have.property('email').to.equal('jorge@jetson.com');
 
   // })
 
-  it('Should finOnde user', async () => {
+  it('Should finOne user', async () => {
     const user = {
-      email: 'nextgenn@gmail.com'
+      email: 'jorge@jetson.com',
+      password : 'jorginho'
     }
     console.log(user)
-    const { data } = await api.get('/users', user)
+    const { data } = await api.post('/users', user)
     console.log(data)
 
-    expect(data).to.be.an('object').to.have.property('email').to.equal('thaisgennari@gmail.com');
+    expect(data).to.be.an('object').to.have.property('email').to.equal('jorge@jetson.com');
   })
 
   it('should update user password', async () => {

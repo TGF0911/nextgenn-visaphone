@@ -14,9 +14,9 @@ module.exports = {
   },
 
   async show(req, res) {
-    const { email } = req.body
+    const { email, password } = req.body
 
-    const user = await User.findOne({ email : email })
+    const user = await User.findOne({ email : email , password : password})
     console.log(user)
     res.json(user)
   },
