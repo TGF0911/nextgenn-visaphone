@@ -33,6 +33,11 @@ const CreateUser = () => {
       alert('Algo deu errado. Verifique seus dados e tente novamente!')
     }
   }
+
+  function handlePush(){
+    alert('Cadastrado com sucesso!')
+    history.push('/login')
+  }
     
   
 
@@ -47,7 +52,7 @@ const CreateUser = () => {
       <main>
         <div className="create-form" >
 
-          <form onSubmit={handleSubmit} >
+          <form onSubmit={handlePush} >
             <fieldset>
               <legend>Dados</legend>
 

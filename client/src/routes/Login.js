@@ -17,7 +17,7 @@ const Login = () => {
       }
      try {
        const response = await api.post('/api/login', data)
-       history.push(`/home/:${response._id}`)
+       //history.push(`/home/:${response._id}`)
      } catch (error) {
         alert('Algo deu errado. Verifique seus dados e tente novamente.')
      }
@@ -31,7 +31,7 @@ const Login = () => {
         <h1>Bem-vindo(a)!</h1>
         <div className="login-form">
 
-          <form onSubmit={handleLogin} >
+          <form onSubmit={() => history.push('/create-room')} >
             <fieldset>
               <legend>Login</legend>
               <div className="input-block">
