@@ -1,5 +1,5 @@
 #landing-container {
-  background: #FF1717;
+  background: linear-gradient(to bottom right, rgb(188, 211, 255), rgb(74, 170, 226));
 
   width: 100vw;
   height: 100vh;
@@ -33,7 +33,7 @@
 
 #landing-container .content-wrapper main h1 {
   font-size: 76px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 70px;
 }
 

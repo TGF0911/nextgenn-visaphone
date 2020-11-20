@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 
 import '../styles/create-user.css'
 
-import videoChat from '../assets/videoChat.svg'
+import videoChat from '../assets/video-chat.svg'
 
 const CreateUser = () => {
 

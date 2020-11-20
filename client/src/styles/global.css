@@ -5,7 +5,7 @@
 }
 
 body {
-  color: #fff;
+  color: #000;
   background: #ebf2f5;
 }
 
@@ -13,5 +13,5 @@ body,
 input,
 button,
 textarea {
-  font: 600 18px Nunito, sans-serif;
+  font: 400 18px Goldman, sans-serif;
 }

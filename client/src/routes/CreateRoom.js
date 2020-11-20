@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import {useHistory} from 'react-router-dom'
 import { v1 as uuid } from "uuid";
 
+import '../styles/create-room.css'
+import imgVideo from '../assets/create-user.jpeg'
+
 const CreateRoom = () => {
     const [roomName, setRoomName] = useState('')
     const history = useHistory()
@@ -13,7 +16,7 @@ const CreateRoom = () => {
     return (
        <div id="create-room-container">
            <aside>
-               {/* imagem */}
+               <img src={imgVideo} alt="Video chamada" className="video-chat"/>
            </aside>
            <main>
            <form onSubmit={create} className="create-form">

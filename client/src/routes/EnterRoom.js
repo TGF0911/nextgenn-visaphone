@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import '../styles/enter.css'
-
+import imgVideo from '../assets/create-user.jpeg'
 
 const Home = () => {
   const history = useHistory()
@@ -16,22 +16,30 @@ const Home = () => {
   return (
     <div id="enter-container">
       <aside>
-        {/* imagem */}
+      <img src={imgVideo} alt="Video chamada" className="video-chat"/>
       </aside>
 
       <main>
         <h2>Faça video chamadas aqui!</h2>
-        <form onSubmit={enter} className="enter-form">
+        <div className="enter-form">
+
+        <form onSubmit={enter}>
+          <fieldset>
+            <legend>Entre na sala</legend>
         <div className="input-block">
-         <label htmlFor="name">Nome da sala:</label>
+         <label htmlFor="name">Nome da sala:('/room/nome/id')</label>
          <input type="text" id="name" value={roomName} onChange={e => setRoomName(e.target.value)}/>
         </div>
+
         <div className="input-block">
-         <label htmlFor="id">Nome da sala:</label>
+         <label htmlFor="id">Id da sala:('/room/nome/id')</label>
          <input type="text" id="id" value={roomId} onChange={e => setRoomId(e.target.value)}/>
         </div>
+
         <button type="submit" className="confirm-btn" >Entrar na sala</button>
+          </fieldset>
         </form>
+        </div>
       </main>
 
     </div>

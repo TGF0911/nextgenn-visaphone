@@ -3,19 +3,7 @@ import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
 
-const Container = styled.div`
-    padding: 20px;
-    display: flex;
-    height: 100vh;
-    width: 90%;
-    margin: auto;
-    flex-wrap: wrap;
-`;
-
-const StyledVideo = styled.video`
-    height: 40%;
-    width: 50%;
-`;
+import '../styles/room.css'
 
 const Video = (props) => {
     const ref = useRef();
@@ -27,14 +15,14 @@ const Video = (props) => {
     }, []);
 
     return (
-        <StyledVideo playsInline autoPlay ref={ref} />
+        <video className="styleVideo" id="partnerVideo" playsInline autoPlay ref={ref} />
     );
 }
 
 
 const videoConstraints = {
-    height: window.innerHeight / 2,
-    width: window.innerWidth / 2
+    height: window.innerHeight / 1,
+    width: window.innerWidth / 1
 };
 
 const Room = (props) => {
@@ -43,6 +31,7 @@ const Room = (props) => {
     const userVideo = useRef();
     const peersRef = useRef([]);
     const roomID = props.match.params.roomID;
+    const roomName = props.match.params.roomName;
 
     useEffect(() => {
         socketRef.current = io.connect("/");
@@ -57,7 +46,10 @@ const Room = (props) => {
                         peerID: userID,
                         peer,
                     })
-                    peers.push(peer);
+                    peers.push({
+                        peerID: userID,
+                        peer,
+                    });
                 })
                 setPeers(peers);
             })
@@ -69,13 +61,27 @@ const Room = (props) => {
                     peer,
                 })
 
-                setPeers(users => [...users, peer]);
+                const peersObj = {
+                    peerID: payload.callerID,
+                    peer,
+                }
+
+                setPeers(users => [...users, peersObj]);
             });
 
             socketRef.current.on("receiving returned signal", payload => {
                 const item = peersRef.current.find(p => p.peerID === payload.id);
                 item.peer.signal(payload.signal);
             });
+            socketRef.current.on("user left", id => {
+                const peerObj = peersRef.current.find(p => p.peerID === id)
+                peerObj.peer && peerObj.peer.destroy()
+                const peers = peersRef.current.filter(p => p.peerID === id)
+                peersRef.current = peers
+                setPeers(peers)
+            })
+
+
         })
     }, []);
 
@@ -110,14 +116,18 @@ const Room = (props) => {
     }
 
     return (
-        <Container>
-            <StyledVideo muted ref={userVideo} autoPlay playsInline />
-            {peers.map((peer, index) => {
-                return (
-                    <Video key={index} peer={peer} />
-                );
-            })}
-        </Container>
+        <div id="container-room">
+            <h2>BEm vindo(a) ao {roomName}</h2>
+
+            <div id="container" >
+                <video className="styleVideo" id="userVideo" muted ref={userVideo} autoPlay playsInline />
+                {peers.map((peer) => {
+                    return (
+                        <Video key={peer.peerID} peer={peer.peer} />
+                    );
+                })}
+            </div>
+        </div>
     );
 };
 
