@@ -16,10 +16,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Node.js](https://nodejs.org/en/)
 - [React](https://reactjs.org)
 - [MongoDB](https://mongodb.com/)
+- [Socket.io](https://socket.io)
 ## 💻 Projeto
 
-Projeto do 2tdsa da fiap do disrupt que tem a ideia de bla bla bla tech
-NextGenn escolheu desenvolver um software capaz de realizar vídeo chamadas pela Web, utilizando JavaScript, NodeJs, WebRTC e alguns frameworks, como o ExpressJS.
+
+2TDSA da FIAP no Disrupt21, a atividade nos fez pensar em tecnologias que foram previstas em filmes futuristas antigos, e que hoje em dia são totalmente viáveis. Com isso, a NextGenn escolheu desenvolver um software capaz de realizar vídeo cgamadas pela Web, utilizando tecnologias como NodeJS, WebRTC, Socket.io e alguns framenworks, como o ExpressJS e Mongoose.
+
 
 ## Authors
 
