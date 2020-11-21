@@ -2,7 +2,7 @@
 <br>
 
 <p align="center">
-  <img alt="VisPhone" src=".github/.png" width="100%">
+  <img alt="VisPhone" src=".github/app.png" width="100%">
 </p>
 <br>
 <br>
